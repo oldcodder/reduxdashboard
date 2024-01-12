@@ -257,13 +257,14 @@ const Customer = () => {
               X
             </button>
           </div>
-          <div className="my-6">
+          <div className="my-6 px-6">
             <div className="">
               <input
                 className="w-full py-2 px-2 border border-gray-400 rounded-md"
                 type="text"
                 name="customername"
                 placeholder="Customer Name"
+                onChange={(e) => setNewCustomerData({ ...newCustomerData, customername: e.target.value })}
               />
             </div>
             <div className="my-6">
@@ -272,18 +273,22 @@ const Customer = () => {
                 type="text"
                 name="email"
                 placeholder="Email"
+                onChange={(e) => setNewCustomerData({ ...newCustomerData, email: e.target.value })}
               />
             </div>
             <div className="my-6">
+              <label htmlFor="upload_photo" className="cursor-pointer text-[#57BC90]">Upload Photo</label>
               <input
-                className="w-full rounded-md"
+                className="w-full rounded-md hidden"
                 type="file"
                 name="photo"
                 placeholder="Upload Photo"
+                id="upload_photo"
+                onChange={(e) => setNewCustomerData({ ...newCustomerData, photo: e.target.files[0] })}
               />
             </div>
             <div className="my-5 w-full">
-              <button className=" w-full uppercase bg-gradient-to-r from-[#57BC90] to-[#004B40] text-white py-2 px-4 rounded-md">
+              <button onClick={addCustomerHandler} className=" w-full uppercase bg-gradient-to-r from-[#57BC90] to-[#004B40] text-white py-2 px-4 rounded-md">
                 Edit Customer
               </button>
             </div>
@@ -303,11 +308,11 @@ const Customer = () => {
           <div className="text-center">
             <MdDeleteForever className="text-9xl inline-block text-red-500 text-center" />
             <p className="text-center my-3 font-bold text-xl">Are You Sure</p>
-            <p>
+            <p className="mx-4">
               Do you really want to delete this customer? This process can not
               be undone.
             </p>
-            <div className="flex justify-around mt-10">
+            <div className="flex justify-around mt-10 mb-6">
               <button className="bg-[#A5A5AF] py-2 px-8 rounded-md text-white">
                 Cancel
               </button>
