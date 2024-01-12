@@ -30,7 +30,6 @@ const Customer = () => {
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       innerWidth: "100px",
-      height: "430px",
       width: "400px",
       borderRadius: "10px"
     }
@@ -155,15 +154,15 @@ const Customer = () => {
             className=""
             ariaHideApp={false}
           >
-            <div className="flex justify-between bg-gradient-to-r from-[#57BC90] to-[#004B40] py-4">
-              <p className="ms-4 my-4 text-xl text-white font-bold">
+            <div className="flex items-center flex-col  bg-gradient-to-r from-[#57BC90] to-[#004B40] pt-8 pb-4">
+              <p className="text-xl text-white font-bold">
                 Add New Customer
               </p>
               <button onClick={close} className="absolute right-2 top-2">
-                X
+                <span className="relative w-[20px] h-[20px] block before:absolute before:w-full before:h-[2px] before:bg-white before:left-0 before:top-2 before:rotate-45 after:absolute after:w-full after:h-[2px] after:bg-white after:left-0 after:top-2 after:-rotate-45"></span>
               </button>
             </div>
-            <div className="my-6">
+            <div className="my-6 px-6">
               <div className="">
                 <input
                   className="w-full py-2 px-2 border border-gray-400 rounded-md"
@@ -181,11 +180,13 @@ const Customer = () => {
                 />
               </div>
               <div className="my-6">
+              <label htmlFor="upload_photo" className="cursor-pointer text-[#57BC90]">Upload Photo</label>
                 <input
-                  className="w-full rounded-md"
+                  className="w-full rounded-md hidden"
                   type="file"
                   name="photo"
                   placeholder="Upload Photo"
+                  id="upload_photo"
                 />
               </div>
               <div className="my-5 w-full">
