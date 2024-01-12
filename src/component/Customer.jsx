@@ -249,12 +249,12 @@ const Customer = () => {
           className=""
           ariaHideApp={false}
         >
-          <div className="flex justify-between bg-gradient-to-r from-[#57BC90] to-[#004B40] py-4">
-            <p className="ms-4 my-4 text-xl text-white font-bold">
+           <div className="flex items-center flex-col  bg-gradient-to-r from-[#57BC90] to-[#004B40] pt-8 pb-4">
+            <p className="text-xl text-white font-bold">
               Edit Customer
             </p>
             <button onClick={close} className="absolute right-2 top-2">
-              X
+              <span className="relative w-[20px] h-[20px] block before:absolute before:w-full before:h-[2px] before:bg-white before:left-0 before:top-2 before:rotate-45 after:absolute after:w-full after:h-[2px] after:bg-white after:left-0 after:top-2 after:-rotate-45"></span>
             </button>
           </div>
           <div className="my-6 px-6">
